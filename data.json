@@ -1,6 +1,6 @@
 {
-  "updated_at": 1780601427.2725098,
-  "updated_iso": "2026-06-04 19:30 UTC",
+  "updated_at": 1780602114.869834,
+  "updated_iso": "2026-06-04 19:41 UTC",
   "threshold": 4.0,
   "stats": {
     "candidates": 16,
@@ -23,8 +23,8 @@
       "score_raw": 3.97,
       "price": 0.008455,
       "liquidity": 385785,
-      "age_h": 27.0,
-      "updated_min": 0.0,
+      "age_h": 27.2,
+      "updated_min": 11.5,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -60,8 +60,8 @@
       "score_raw": 3.58,
       "price": 0.0002025,
       "liquidity": 32391,
-      "age_h": 14.5,
-      "updated_min": 0.0,
+      "age_h": 14.7,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -93,8 +93,8 @@
       "score_raw": 1.52,
       "price": 0.00222,
       "liquidity": 211546,
-      "age_h": 22.9,
-      "updated_min": 0.0,
+      "age_h": 23.1,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -118,8 +118,8 @@
       "score_raw": 0.65,
       "price": 0.0003682,
       "liquidity": 43441,
-      "age_h": 0.0,
-      "updated_min": 0.0,
+      "age_h": 0.2,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -139,8 +139,8 @@
       "score_raw": 0.38,
       "price": 0.004378,
       "liquidity": 173496,
-      "age_h": 27.0,
-      "updated_min": 0.0,
+      "age_h": 27.2,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -160,8 +160,8 @@
       "score_raw": 0.36,
       "price": 0.0003331,
       "liquidity": 62964,
-      "age_h": 27.0,
-      "updated_min": 0.0,
+      "age_h": 27.2,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -181,8 +181,8 @@
       "score_raw": 0.34,
       "price": 5.983e-05,
       "liquidity": 1385910,
-      "age_h": 14.5,
-      "updated_min": 0.0,
+      "age_h": 14.7,
+      "updated_min": 11.5,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -202,8 +202,8 @@
       "score_raw": 0.22,
       "price": 0.000727,
       "liquidity": 62596,
-      "age_h": 22.9,
-      "updated_min": 0.0,
+      "age_h": 23.1,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -223,8 +223,8 @@
       "score_raw": 0.2,
       "price": 0.006189,
       "liquidity": 181827,
-      "age_h": 19.5,
-      "updated_min": 0.0,
+      "age_h": 19.7,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -244,8 +244,8 @@
       "score_raw": 0.19,
       "price": 0.0001284,
       "liquidity": 33508,
-      "age_h": 3.0,
-      "updated_min": 0.0,
+      "age_h": 3.2,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -265,8 +265,8 @@
       "score_raw": 0.15,
       "price": 0.006808,
       "liquidity": 243466,
-      "age_h": 27.0,
-      "updated_min": 0.0,
+      "age_h": 27.2,
+      "updated_min": 11.5,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -286,8 +286,8 @@
       "score_raw": 0.15,
       "price": 0.0005027,
       "liquidity": 58688,
-      "age_h": 7.3,
-      "updated_min": 0.0,
+      "age_h": 7.5,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -307,8 +307,8 @@
       "score_raw": 0.14,
       "price": 8.208e-05,
       "liquidity": 2337969,
-      "age_h": 7.3,
-      "updated_min": 0.0,
+      "age_h": 7.5,
+      "updated_min": 11.5,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -328,8 +328,8 @@
       "score_raw": 0.08,
       "price": 0.0003748,
       "liquidity": 43919,
-      "age_h": 0.0,
-      "updated_min": 0.0,
+      "age_h": 0.2,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -349,8 +349,8 @@
       "score_raw": 0.05,
       "price": 0.0002111,
       "liquidity": 47865,
-      "age_h": 14.5,
-      "updated_min": 0.0,
+      "age_h": 14.7,
+      "updated_min": 11.5,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -370,8 +370,8 @@
       "score_raw": 0,
       "price": 0.0009293,
       "liquidity": 77205,
-      "age_h": 27.0,
-      "updated_min": 0.0,
+      "age_h": 27.2,
+      "updated_min": 11.5,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -407,146 +407,94 @@
   "learning": [],
   "wallets": {
     "tracked": 29,
+    "verified": 0,
+    "whales": 0,
+    "bots": 0,
     "captures": 29,
-    "smart": [
+    "leaderboard": [
       {
         "address": "4eJbBdr96Kkesi3N9ZiQ5X2w3DpA4xxXL1apZLApitkk",
-        "buys_count": 1,
         "smart_score": 0.66,
         "pnl_sol": 0.56,
         "win_rate": 1.0,
         "closed_count": 3,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
       },
       {
         "address": "1eveYYxZ2mDiAnmCh3fnAbJwjgErzokRA1b6UrRybSM",
-        "buys_count": 1,
         "smart_score": 0.365,
         "pnl_sol": 0.331,
         "win_rate": 0.8,
         "closed_count": 5,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
       },
       {
         "address": "FHYCPf2K7TU7RB7Yd2UpP5if6UsVe6RS8SUKJULngUw1",
-        "buys_count": 1,
         "smart_score": 0.353,
         "pnl_sol": 0.759,
         "win_rate": 0.5,
         "closed_count": 2,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
       },
       {
         "address": "CtaPt9VxentpxMs9dPgbT7Kt54Mv5awuCqdBe4X51A1a",
-        "buys_count": 1,
         "smart_score": 0.235,
         "pnl_sol": 0.217,
         "win_rate": 0.62,
         "closed_count": 8,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
       },
       {
         "address": "7yy13aDYCvFa96mL5z58uWZhiXEqUjdG2ZKPdezV4Gb3",
-        "buys_count": 1,
         "smart_score": 0.115,
         "pnl_sol": 0.029,
         "win_rate": 0.5,
         "closed_count": 4,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
       },
       {
         "address": "3UhLpvwiTjvHxrmMPTGsFiaZqfcVJQwm2aDvnQ6eQ2rY",
-        "buys_count": 1,
         "smart_score": 0.109,
         "pnl_sol": 0.026,
         "win_rate": 0.5,
         "closed_count": 2,
+        "buys_count": 1,
+        "verified": 0,
+        "is_bot": 0,
+        "tx_per_day": null,
         "tokens": [
           "RPGKITTY"
         ]
-      }
-    ],
-    "emerging": [],
-    "recent": [
-      {
-        "address": "8NHtF1PYP36aWdCp5dpJh21338zHdnt3QTpW9tCfxgL6",
-        "tokens": [
-          "three"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "3j6UiCr1QurYLqeMwsG983AiszPJ2v45s3H5gm9rAwZW",
-        "tokens": [
-          "three"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "9cCxc8Jd4iWE1viZpGUg1YJL7E4fh2AqmenqNu3JUjmw",
-        "tokens": [
-          "Magpie"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "9YpM9dhWoZEFRpU181yHYrCGyiia32F2bXGG1Hqtws1h",
-        "tokens": [
-          "Magpie"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "2VSyyP9U3K2RuXyd2LFjSNVCLvKibEvpL9FbbwQFjJQW",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "CtaPt9VxentpxMs9dPgbT7Kt54Mv5awuCqdBe4X51A1a",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "3UhLpvwiTjvHxrmMPTGsFiaZqfcVJQwm2aDvnQ6eQ2rY",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "5rLftfPC5jjjZbHuoViYoAzFEdqnSx3aovqRx2wcz1Ru",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "DdTTdPmPscxpwyGT92N6x3E4U23jKy6iivxNbH5ozZ16",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
-      },
-      {
-        "address": "5wWqS2Ypfrz1UXwbJmfdpUGQDDKQ6L6dbfjTjy7nuAw1",
-        "tokens": [
-          "RPGKITTY"
-        ],
-        "buys_count": 1
       }
     ]
   }
