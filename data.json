@@ -1,6 +1,6 @@
 {
-  "updated_at": 1780575981.5228684,
-  "updated_iso": "2026-06-04 12:26 UTC",
+  "updated_at": 1780576315.545711,
+  "updated_iso": "2026-06-04 12:31 UTC",
   "threshold": 4.0,
   "stats": {
     "candidates": 14,
@@ -23,8 +23,8 @@
       "score_raw": 4.7,
       "price": 0.0001659,
       "liquidity": 32516,
-      "age_h": 7.4,
-      "updated_min": 0.5,
+      "age_h": 7.5,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -56,8 +56,8 @@
       "score_raw": 4.54,
       "price": 0.01236,
       "liquidity": 456038,
-      "age_h": 19.9,
-      "updated_min": 0.5,
+      "age_h": 20.0,
+      "updated_min": 6.1,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -93,8 +93,8 @@
       "score_raw": 2.1,
       "price": 0.00092,
       "liquidity": 73920,
-      "age_h": 19.9,
-      "updated_min": 0.5,
+      "age_h": 20.0,
+      "updated_min": 6.1,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -126,8 +126,8 @@
       "score_raw": 1.57,
       "price": 0.002278,
       "liquidity": 210440,
-      "age_h": 15.8,
-      "updated_min": 0.5,
+      "age_h": 15.9,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -151,8 +151,8 @@
       "score_raw": 0.62,
       "price": 4.592e-05,
       "liquidity": 1234330,
-      "age_h": 7.4,
-      "updated_min": 0.5,
+      "age_h": 7.5,
+      "updated_min": 6.1,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -172,8 +172,8 @@
       "score_raw": 0.47,
       "price": 7.295e-05,
       "liquidity": 2189459,
-      "age_h": 0.2,
-      "updated_min": 0.5,
+      "age_h": 0.3,
+      "updated_min": 6.1,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -193,8 +193,8 @@
       "score_raw": 0.43,
       "price": 0.0004486,
       "liquidity": 58499,
-      "age_h": 0.2,
-      "updated_min": 0.5,
+      "age_h": 0.3,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -214,8 +214,8 @@
       "score_raw": 0.4,
       "price": 0.0004816,
       "liquidity": 50327,
-      "age_h": 15.8,
-      "updated_min": 0.5,
+      "age_h": 15.9,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -235,8 +235,8 @@
       "score_raw": 0.19,
       "price": 0.004762,
       "liquidity": 152959,
-      "age_h": 12.5,
-      "updated_min": 0.5,
+      "age_h": 12.6,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -256,8 +256,8 @@
       "score_raw": 0.15,
       "price": 0.0001294,
       "liquidity": 26074,
-      "age_h": 17.7,
-      "updated_min": 0.5,
+      "age_h": 17.8,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -277,8 +277,8 @@
       "score_raw": 0.09,
       "price": 0.006768,
       "liquidity": 242389,
-      "age_h": 19.9,
-      "updated_min": 0.5,
+      "age_h": 20.0,
+      "updated_min": 6.1,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -298,8 +298,8 @@
       "score_raw": 0.07,
       "price": 0.0002242,
       "liquidity": 48003,
-      "age_h": 7.4,
-      "updated_min": 0.5,
+      "age_h": 7.5,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -319,8 +319,8 @@
       "score_raw": 0.06,
       "price": 0.000385,
       "liquidity": 62458,
-      "age_h": 19.9,
-      "updated_min": 0.5,
+      "age_h": 20.0,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -340,8 +340,8 @@
       "score_raw": 0.03,
       "price": 0.004936,
       "liquidity": 175503,
-      "age_h": 19.9,
-      "updated_min": 0.5,
+      "age_h": 20.0,
+      "updated_min": 6.1,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -374,5 +374,83 @@
       "win_rate": null
     }
   ],
-  "learning": []
+  "learning": [],
+  "wallets": {
+    "tracked": 27,
+    "captures": 27,
+    "smart": [],
+    "emerging": [],
+    "recent": [
+      {
+        "address": "9cCxc8Jd4iWE1viZpGUg1YJL7E4fh2AqmenqNu3JUjmw",
+        "tokens": [
+          "Magpie"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "9YpM9dhWoZEFRpU181yHYrCGyiia32F2bXGG1Hqtws1h",
+        "tokens": [
+          "Magpie"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "2VSyyP9U3K2RuXyd2LFjSNVCLvKibEvpL9FbbwQFjJQW",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "CtaPt9VxentpxMs9dPgbT7Kt54Mv5awuCqdBe4X51A1a",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "3UhLpvwiTjvHxrmMPTGsFiaZqfcVJQwm2aDvnQ6eQ2rY",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "5rLftfPC5jjjZbHuoViYoAzFEdqnSx3aovqRx2wcz1Ru",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "DdTTdPmPscxpwyGT92N6x3E4U23jKy6iivxNbH5ozZ16",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "5wWqS2Ypfrz1UXwbJmfdpUGQDDKQ6L6dbfjTjy7nuAw1",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "3QkDWt9khynp5qNyzX5xpvjSjDK6a2WKeSK9vQ2ekMHM",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      },
+      {
+        "address": "CnYHS8DWxazLgxoihdyoFJJ3Lh2FJKFeBudkb11VW2Hr",
+        "tokens": [
+          "RPGKITTY"
+        ],
+        "buys_count": 1
+      }
+    ]
+  }
 }
