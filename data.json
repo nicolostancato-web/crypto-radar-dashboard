@@ -1,6 +1,6 @@
 {
-  "updated_at": 1780634812.9048994,
-  "updated_iso": "2026-06-05 04:46 UTC",
+  "updated_at": 1780645927.785147,
+  "updated_iso": "2026-06-05 07:52 UTC",
   "threshold": 4.0,
   "stats": {
     "candidates": 14,
@@ -23,8 +23,8 @@
       "score_raw": 3.29,
       "price": 0.004573,
       "liquidity": 323483,
-      "age_h": 36.2,
-      "updated_min": 2.8,
+      "age_h": 39.3,
+      "updated_min": 188.0,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -60,8 +60,8 @@
       "score_raw": 2.14,
       "price": 0.00019,
       "liquidity": 31409,
-      "age_h": 23.8,
-      "updated_min": 2.8,
+      "age_h": 26.8,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -93,8 +93,8 @@
       "score_raw": 1.52,
       "price": 0.002021,
       "liquidity": 205310,
-      "age_h": 32.2,
-      "updated_min": 2.8,
+      "age_h": 35.3,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -118,8 +118,8 @@
       "score_raw": 0.55,
       "price": 0.000492,
       "liquidity": 45215,
-      "age_h": 9.3,
-      "updated_min": 2.8,
+      "age_h": 12.4,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -139,8 +139,8 @@
       "score_raw": 0.47,
       "price": 0.0008094,
       "liquidity": 72920,
-      "age_h": 32.2,
-      "updated_min": 2.8,
+      "age_h": 35.3,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -160,8 +160,8 @@
       "score_raw": 0.42,
       "price": 0.00452,
       "liquidity": 173584,
-      "age_h": 36.2,
-      "updated_min": 2.8,
+      "age_h": 39.3,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -181,8 +181,8 @@
       "score_raw": 0.35,
       "price": 0.0002834,
       "liquidity": 58145,
-      "age_h": 36.2,
-      "updated_min": 2.8,
+      "age_h": 39.3,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -202,8 +202,8 @@
       "score_raw": 0.34,
       "price": 0.0003383,
       "liquidity": 43170,
-      "age_h": 9.3,
-      "updated_min": 2.8,
+      "age_h": 12.4,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -223,8 +223,8 @@
       "score_raw": 0.26,
       "price": 0.0002657,
       "liquidity": 34100,
-      "age_h": 6.9,
-      "updated_min": 2.8,
+      "age_h": 10.0,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -244,8 +244,8 @@
       "score_raw": 0.22,
       "price": 0.007321,
       "liquidity": 196668,
-      "age_h": 28.8,
-      "updated_min": 2.8,
+      "age_h": 31.9,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -265,8 +265,8 @@
       "score_raw": 0.2,
       "price": 4.895e-05,
       "liquidity": 1300078,
-      "age_h": 23.8,
-      "updated_min": 2.8,
+      "age_h": 26.8,
+      "updated_min": 188.0,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -286,8 +286,8 @@
       "score_raw": 0.2,
       "price": 0.003482,
       "liquidity": 205395,
-      "age_h": 36.2,
-      "updated_min": 2.8,
+      "age_h": 39.3,
+      "updated_min": 188.0,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -307,8 +307,8 @@
       "score_raw": 0.18,
       "price": 0.0003653,
       "liquidity": 69408,
-      "age_h": 36.2,
-      "updated_min": 2.8,
+      "age_h": 39.3,
+      "updated_min": 188.0,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -328,8 +328,8 @@
       "score_raw": 0.06,
       "price": 0.0002104,
       "liquidity": 47192,
-      "age_h": 23.8,
-      "updated_min": 2.8,
+      "age_h": 26.8,
+      "updated_min": 188.0,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -364,7 +364,7 @@
   ],
   "learning": [],
   "wallets": {
-    "tracked": 61,
+    "tracked": 62,
     "verified": 1,
     "whales": 1,
     "bots": 5,
@@ -497,69 +497,122 @@
     ]
   },
   "spikes": {
-    "big_buys": 29,
-    "wallets": 24,
+    "big_buys": 32,
+    "early": 1,
+    "wallets": 27,
     "bosses": [],
     "recent": [
       {
+        "wallet": "61VFto2Wx5uzVfJnhaLeGQXnmxrX5aEuT44iTLoiB82L",
+        "pool_name": "wNOT / SOL",
+        "usd": 725.0,
+        "is_early": 1,
+        "token_age_min": 0.0,
+        "runup_pct": 0.0
+      },
+      {
+        "wallet": "KbHYEYKJMhM9inKj5nVtyojDMQtikAsfEknmezW2X8K",
+        "pool_name": "three / SOL",
+        "usd": 2112.0,
+        "is_early": 0,
+        "token_age_min": 53319.7,
+        "runup_pct": 0.043
+      },
+      {
+        "wallet": "Bb8GgZbivT8ZrnbM4Uo5y1Bgnm9BWhAwc2cNU8PSEh2y",
+        "pool_name": "three / SOL",
+        "usd": 1415.0,
+        "is_early": 0,
+        "token_age_min": 53307.2,
+        "runup_pct": 0.024
+      },
+      {
         "wallet": "dB2zQtuPTyHDMHMUsY1dRfpgzijxmSd6v23roKJnEbx",
         "pool_name": "three / SOL",
-        "usd": 1284.0
+        "usd": 1284.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "ERD97gqCAbHt7HEdS1767ZSZJzh4nFTJ5KvMtoNRbP19",
         "pool_name": "three / SOL",
-        "usd": 2493.0
+        "usd": 2493.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "3uahaGyDgHhfZon9nMCbk3bGa8zXmRNDcTUzKKGw5yKB",
         "pool_name": "three / SOL",
-        "usd": 1372.0
+        "usd": 1372.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "7h4gLEKsayHNnVKrMMbT1Bv97DiJZRMwD9cWiACHsUyd",
         "pool_name": "three / SOL",
-        "usd": 1077.0
+        "usd": 1077.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "3uahaGyDgHhfZon9nMCbk3bGa8zXmRNDcTUzKKGw5yKB",
         "pool_name": "three / SOL",
-        "usd": 2243.0
+        "usd": 2243.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "7JCe3GHwkEr3feHgtLXnmuJ1yB3A7coSeyynxTBgdG8k",
         "pool_name": "three / SOL",
-        "usd": 3679.0
+        "usd": 3679.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "EWUFnRCgXC5v1QA1EmTzRxDbhpKnfkJjtugyaVVUDJCN",
         "pool_name": "TROLL / SOL",
-        "usd": 9365.0
+        "usd": 9365.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "3Hr7pwvAm1p2Hk2mgJXuH3pE2NGVvxhAmdwB4jLbftUa",
         "pool_name": "three / SOL",
-        "usd": 1558.0
+        "usd": 1558.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "EDVRgkZMbjeRHekdRqa1rhCunepVWj3gB2HKFN5tQ5B8",
         "pool_name": "TROLL / SOL",
-        "usd": 2077.0
+        "usd": 2077.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "DG6SHMwwqyGyi7cYEzTrjxQ2KgJZA3GedMeqgkGAwkuC",
         "pool_name": "TROLL / SOL",
-        "usd": 2281.0
+        "usd": 2281.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       },
       {
         "wallet": "8hQ5Qs73P5awLSiBskDpFABDhsTRh31g382uH8ASxL9R",
         "pool_name": "goblintown / SOL",
-        "usd": 1815.0
-      },
-      {
-        "wallet": "8LAYfGgNNFjy8YiFYGSM4ZH4SNyxdMwNQKfyHVP8pqBM",
-        "pool_name": "three / SOL",
-        "usd": 1594.0
+        "usd": 1815.0,
+        "is_early": 0,
+        "token_age_min": null,
+        "runup_pct": null
       }
     ]
   }
