@@ -1,6 +1,6 @@
 {
-  "updated_at": 1780722305.5670745,
-  "updated_iso": "2026-06-06 05:05 UTC",
+  "updated_at": 1780731577.8315132,
+  "updated_iso": "2026-06-06 07:39 UTC",
   "threshold": 4.0,
   "stats": {
     "candidates": 19,
@@ -23,8 +23,8 @@
       "score_raw": 4.26,
       "price": 0.0002002,
       "liquidity": 30855,
-      "age_h": 8.2,
-      "updated_min": 1.4,
+      "age_h": 10.7,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -56,8 +56,8 @@
       "score_raw": 3.59,
       "price": 0.0007793,
       "liquidity": 67131,
-      "age_h": 12.9,
-      "updated_min": 1.4,
+      "age_h": 15.5,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -89,8 +89,8 @@
       "score_raw": 3.11,
       "price": 0.003235,
       "liquidity": 240065,
-      "age_h": 60.5,
-      "updated_min": 1.4,
+      "age_h": 63.1,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -122,8 +122,8 @@
       "score_raw": 1.5,
       "price": 0.001863,
       "liquidity": 186565,
-      "age_h": 56.5,
-      "updated_min": 1.4,
+      "age_h": 59.1,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -147,8 +147,8 @@
       "score_raw": 1.25,
       "price": 4.672e-05,
       "liquidity": 1220500,
-      "age_h": 48.1,
-      "updated_min": 1.4,
+      "age_h": 50.6,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -172,8 +172,8 @@
       "score_raw": 0.91,
       "price": 1.81,
       "liquidity": 1056482,
-      "age_h": 0.0,
-      "updated_min": 1.4,
+      "age_h": 2.6,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -197,8 +197,8 @@
       "score_raw": 0.89,
       "price": 0.0002695,
       "liquidity": 68432,
-      "age_h": 10.0,
-      "updated_min": 1.4,
+      "age_h": 12.6,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -222,8 +222,8 @@
       "score_raw": 0.79,
       "price": 0.0001307,
       "liquidity": 27734,
-      "age_h": 48.1,
-      "updated_min": 1.4,
+      "age_h": 50.6,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -243,8 +243,8 @@
       "score_raw": 0.44,
       "price": 0.0001807,
       "liquidity": 37562,
-      "age_h": 8.2,
-      "updated_min": 1.4,
+      "age_h": 10.7,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -264,8 +264,8 @@
       "score_raw": 0.23,
       "price": 0.00491,
       "liquidity": 171631,
-      "age_h": 60.5,
-      "updated_min": 1.4,
+      "age_h": 63.1,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -285,8 +285,8 @@
       "score_raw": 0.23,
       "price": 0.0002761,
       "liquidity": 54604,
-      "age_h": 60.5,
-      "updated_min": 1.4,
+      "age_h": 63.1,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -306,8 +306,8 @@
       "score_raw": 0.19,
       "price": 0.0002858,
       "liquidity": 39190,
-      "age_h": 0.0,
-      "updated_min": 1.4,
+      "age_h": 2.6,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -327,8 +327,8 @@
       "score_raw": 0.18,
       "price": 0.005123,
       "liquidity": 201108,
-      "age_h": 60.5,
-      "updated_min": 1.4,
+      "age_h": 63.1,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -348,8 +348,8 @@
       "score_raw": 0.12,
       "price": 2.336e-05,
       "liquidity": 1043548,
-      "age_h": 16.8,
-      "updated_min": 1.4,
+      "age_h": 19.3,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -369,8 +369,8 @@
       "score_raw": 0.12,
       "price": 0.0003845,
       "liquidity": 64916,
-      "age_h": 56.5,
-      "updated_min": 1.4,
+      "age_h": 59.1,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -390,8 +390,8 @@
       "score_raw": 0.08,
       "price": 0.000356,
       "liquidity": 52011,
-      "age_h": 60.5,
-      "updated_min": 1.4,
+      "age_h": 63.1,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -411,8 +411,8 @@
       "score_raw": 0.06,
       "price": 0.002053,
       "liquidity": 120075,
-      "age_h": 16.8,
-      "updated_min": 1.4,
+      "age_h": 19.3,
+      "updated_min": 155.9,
       "source": "geckoterminal_trending",
       "signals": [
         {
@@ -432,8 +432,8 @@
       "score_raw": 0.04,
       "price": 0.004115,
       "liquidity": 157382,
-      "age_h": 53.1,
-      "updated_min": 1.4,
+      "age_h": 55.7,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -453,8 +453,8 @@
       "score_raw": 0.04,
       "price": 0.0003855,
       "liquidity": 57233,
-      "age_h": 48.1,
-      "updated_min": 1.4,
+      "age_h": 50.6,
+      "updated_min": 155.9,
       "source": "dexscreener_boosts",
       "signals": [
         {
@@ -489,7 +489,7 @@
   ],
   "learning": [],
   "wallets": {
-    "tracked": 110,
+    "tracked": 286,
     "verified": 9,
     "whales": 4,
     "bots": 13,
@@ -889,5 +889,27 @@
     "avg_exit": -0.0706,
     "win_exit": 0.5,
     "avg_hold": -0.0569
+  },
+  "mains": {
+    "count": 2,
+    "spawns": 176,
+    "list": [
+      {
+        "address": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+        "balance_sol": 2621076.63,
+        "funded_count": 103,
+        "smart_children": 0,
+        "source_wallet": "3QkDWt9khynp5qNyzX5xpvjSjDK6a2WKeSK9vQ2ekMHM",
+        "spawns": 101
+      },
+      {
+        "address": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+        "balance_sol": 88660.91,
+        "funded_count": 79,
+        "smart_children": 0,
+        "source_wallet": "F8GgV2rWs6xE3P5u7FZDsZLpEXXNSzS2zXH71694ypLV",
+        "spawns": 75
+      }
+    ]
   }
 }
