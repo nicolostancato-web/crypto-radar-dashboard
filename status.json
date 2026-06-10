@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-10 13:07",
+  "updated_utc": "2026-06-10 16:03",
   "scenarios": [
     {
       "name": "S3_cluster",
@@ -15,7 +15,7 @@
       "trades": 5,
       "ev_net": 4.5331,
       "win_rate": 0.4,
-      "open": 4,
+      "open": 7,
       "ev_mech": 4.8983
     },
     {
@@ -24,13 +24,13 @@
       "trades": 5,
       "ev_net": 4.5331,
       "win_rate": 0.4,
-      "open": 4,
+      "open": 7,
       "ev_mech": 4.8983
     }
   ],
   "totals": {
-    "spike_buys": 41,
-    "wallet_sells": 34,
+    "spike_buys": 44,
+    "wallet_sells": 46,
     "smart_wallets": 20,
     "best_real_copy_pnl": 25.47
   }
