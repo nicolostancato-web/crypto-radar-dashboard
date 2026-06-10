@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-10 16:03",
+  "updated_utc": "2026-06-10 18:50",
   "scenarios": [
     {
       "name": "S3_cluster",
@@ -12,26 +12,26 @@
     {
       "name": "S2_smartexit",
       "horizon_h": 24,
-      "trades": 5,
-      "ev_net": 4.5331,
-      "win_rate": 0.4,
-      "open": 7,
-      "ev_mech": 4.8983
+      "trades": 7,
+      "ev_net": 3.4842,
+      "win_rate": 0.429,
+      "open": 6,
+      "ev_mech": 3.5341
     },
     {
       "name": "S2_smartexit",
       "horizon_h": 72,
-      "trades": 5,
-      "ev_net": 4.5331,
-      "win_rate": 0.4,
-      "open": 7,
-      "ev_mech": 4.8983
+      "trades": 7,
+      "ev_net": 3.4842,
+      "win_rate": 0.429,
+      "open": 6,
+      "ev_mech": 3.5341
     }
   ],
   "totals": {
-    "spike_buys": 44,
-    "wallet_sells": 46,
-    "smart_wallets": 20,
+    "spike_buys": 56,
+    "wallet_sells": 64,
+    "smart_wallets": 22,
     "best_real_copy_pnl": 25.47
   }
 }
