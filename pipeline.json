@@ -10854,6 +10854,27 @@
       "hours_tracked": 36.9
     },
     {
+      "ca": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+      "ticker": "Three is a mar",
+      "pass": false,
+      "arena": "memecoin",
+      "chain": "solana",
+      "entry_fdv": 5127703,
+      "last_fdv": 5226891,
+      "sig_vol_1h": 126717,
+      "sig_liq": 319044,
+      "ret_now": 0.019,
+      "ret_max": 0.019,
+      "dd_from_peak": 0.0,
+      "ret_1h": -0.033,
+      "ret_6h": -0.127,
+      "ret_24h": null,
+      "hit_2x": false,
+      "rugged": false,
+      "n_obs": 6,
+      "hours_tracked": 10.5
+    },
+    {
       "ca": "8WrW81AnZxcW6gDaM8J9XnqEwt3WX9Bskw8nmRCt66PA",
       "ticker": "PUMPTOBER",
       "pass": false,
@@ -13128,12 +13149,12 @@
       "arena": "memecoin",
       "chain": "solana",
       "entry_fdv": 2820,
-      "last_fdv": 2765,
+      "last_fdv": 2805,
       "sig_vol_1h": 0,
       "sig_liq": 1343,
-      "ret_now": -0.019,
+      "ret_now": -0.005,
       "ret_max": 0.0,
-      "dd_from_peak": -0.019,
+      "dd_from_peak": -0.005,
       "ret_1h": -0.019,
       "ret_6h": -0.019,
       "ret_24h": null,
@@ -14025,6 +14046,13 @@
         "pass": false,
         "vol_1h": 19539,
         "voliq": 1.21
+      },
+      {
+        "ticker": "Miu the pfp ca",
+        "ret_max": 4.15,
+        "pass": false,
+        "vol_1h": 0,
+        "voliq": 1.2
       },
       {
         "ticker": "BRAIN",
