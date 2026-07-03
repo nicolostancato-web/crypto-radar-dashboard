@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Radar — centro di comando</title>
-  <link rel="stylesheet" href="styles.css?v=41">
+  <link rel="stylesheet" href="styles.css?v=42">
 </head>
 <body>
   <main class="wrap">
@@ -23,6 +23,22 @@
         <span class="chip ghost" id="updated">—</span>
       </div>
     </header>
+
+    <!-- PORTAFOGLIO PAPER — PRIMA COSA, in cima -->
+    <section id="portfolio-sec">
+      <div class="seclabel">💼 Portafoglio paper — partiti da €100</div>
+      <div class="port-head" id="port-head"></div>
+      <div class="port-curve" id="port-curve"></div>
+      <p class="note" id="port-rules"></p>
+      <details class="port-more">
+        <summary>Vedi i trade e come funziona</summary>
+        <p class="note">Simulazione ONESTA (nessun soldo vero): ogni segnale = un paper-trade con entrata e uscita realistiche (slippage, trailing stop, niente senno di poi). Se la strategia perde, il portafoglio scende. Così scopriamo la verità a costo zero.</p>
+        <div class="tablewrap"><table id="port-trades">
+          <thead><tr><th>token</th><th>bs</th><th>risultato</th><th>P&L €</th><th>capitale</th><th>dati</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+      </details>
+    </section>
 
     <!-- BALENE IN DIRETTA (real-time dal webhook) -->
     <section id="whalelive-sec">
@@ -64,19 +80,6 @@
     <section>
       <div class="seclabel">A che punto siamo</div>
       <div class="bignums" id="bignums"></div>
-    </section>
-
-    <!-- PORTAFOGLIO PAPER -->
-    <section id="portfolio-sec">
-      <div class="seclabel">💼 Portafoglio paper — partiti da €100</div>
-      <p class="note">Simulazione ONESTA (nessun soldo vero): ogni segnale = un paper-trade con entrata e uscita realistiche (slippage, trailing stop, niente senno di poi). Se la strategia perde, il portafoglio scende. È così che scopriamo la verità a costo zero.</p>
-      <div class="port-head" id="port-head"></div>
-      <div class="port-curve" id="port-curve"></div>
-      <p class="note" id="port-rules"></p>
-      <div class="tablewrap"><table id="port-trades">
-        <thead><tr><th>token</th><th>bs</th><th>risultato</th><th>P&L €</th><th>capitale</th><th>dati</th></tr></thead>
-        <tbody></tbody>
-      </table></div>
     </section>
 
     <!-- COSA FANNO LE BALENE -->
@@ -167,6 +170,6 @@
     </footer>
 
   </main>
-  <script src="app.js?v=41"></script>
+  <script src="app.js?v=42"></script>
 </body>
 </html>

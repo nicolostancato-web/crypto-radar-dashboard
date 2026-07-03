@@ -164,12 +164,23 @@ footer .muted{margin-top:8px;font-size:.78rem}
   .herometa{gap:7px}
 }
 
-/* --- PORTAFOGLIO PAPER --- */
-#portfolio-sec .port-head { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin:10px 0 6px; }
-.port-big { font-size:46px; font-weight:800; letter-spacing:-1px; }
+/* --- PORTAFOGLIO PAPER (card in cima, prima cosa) --- */
+#portfolio-sec { margin-top:22px; background:linear-gradient(135deg,#16243f,#121a2b);
+  border:1px solid #2b3e63; border-radius:20px; padding:22px 26px;
+  box-shadow:0 0 40px rgba(91,140,255,.08); }
+#portfolio-sec .seclabel { margin-bottom:14px; }
+#portfolio-sec .port-head { display:flex; align-items:baseline; gap:26px; flex-wrap:wrap; margin:0 0 6px; }
+.port-big { font-size:58px; font-weight:800; letter-spacing:-2px; line-height:1; }
 .port-big.pos { color:#34d399; } .port-big.neg { color:#f87171; }
-.port-meta { display:flex; flex-direction:column; gap:3px; font-size:14px; color:#9aa4b2; }
+.port-meta { display:flex; flex-direction:column; gap:4px; font-size:14px; color:#9aa4b2;
+  align-self:center; }
 .port-meta .pos { color:#34d399; } .port-meta .neg { color:#f87171; }
+.port-more { margin-top:10px; }
+.port-more > summary { cursor:pointer; color:var(--accent2); font-size:.86rem; font-weight:700;
+  list-style:none; padding:6px 0; }
+.port-more > summary::-webkit-details-marker { display:none; }
+.port-more > summary::before { content:"▸ "; }
+.port-more[open] > summary::before { content:"▾ "; }
 .port-curve { margin:8px 0; }
 .spark { width:100%; height:70px; }
 .spark-base { stroke:#3a4150; stroke-width:1; stroke-dasharray:4 4; }
