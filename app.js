@@ -336,35 +336,10 @@ async function renderWhaleLive() {
   }
 }
 
-async function renderSignals() {
-  try {
-    const r = await fetch(WHALE_API + "/signals?t=" + Date.now(), { cache: "no-store" });
-    const d = await r.json();
-    const sigs = d.signals || [];
-    $("signals-status").textContent = `— ${d.count || 0} segnali attivi`;
-    const tb = document.querySelector("#signals-table tbody");
-    if (!sigs.length) {
-      tb.innerHTML = `<tr><td colspan="4" class="muted">Nessuna confluenza ancora — serve che 2+ balene entrino sullo stesso token. È raro (è caccia): appena succede, appare qui. 🎯</td></tr>`;
-    } else {
-      tb.innerHTML = sigs.map(s => {
-        const ts = s.fired_ts || s.first_ts;
-        const t = new Date(ts * 1000).toLocaleString("it-IT", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
-        return `<tr><td>${t}</td><td>${(s.token || "").slice(0, 8)}…</td>
-          <td><b class="pos">${s.n_balene} 🐋</b></td>
-          <td><a href="${s.dex}" target="_blank">grafico</a></td></tr>`;
-      }).join("");
-    }
-  } catch (e) {
-    $("signals-status").textContent = "— server non raggiungibile";
-  }
-}
-
 (async function () {
   const d = await load("pipeline.json");
   if (!d) { $("mission").textContent = "In avvio…"; return; }
   renderProject(d);
-  renderSignals();
-  setInterval(renderSignals, 30000);     // segnali confluenza ogni 30s
   renderWhaleLive();
   setInterval(renderWhaleLive, 30000);   // aggiorna ogni 30s
   renderTeam(await load("team.json"));
