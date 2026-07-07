@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Radar — centro di comando</title>
-  <link rel="stylesheet" href="styles.css?v=42">
+  <link rel="stylesheet" href="styles.css?v=43">
 </head>
 <body>
   <main class="wrap">
@@ -38,6 +38,16 @@
           <tbody></tbody>
         </table></div>
       </details>
+    </section>
+
+    <!-- SEGNALI DI CONFLUENZA (2+ balene sullo stesso token, in tempo reale) -->
+    <section id="signals-sec">
+      <div class="seclabel">🎯 Segnali live — 2+ balene sullo stesso token <span class="muted" id="signals-status"></span></div>
+      <p class="note">Il cuore del sistema: quando <b>2 o più balene vincenti</b> comprano lo <b>stesso token</b> nella stessa finestra, scatta un segnale. È il "più balene entrano → sale" catturato in tempo reale, in automatico.</p>
+      <div class="tablewrap"><table id="signals-table">
+        <thead><tr><th>quando</th><th>token</th><th>balene</th><th>guarda</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
     </section>
 
     <!-- BALENE IN DIRETTA (real-time dal webhook) -->
@@ -170,6 +180,6 @@
     </footer>
 
   </main>
-  <script src="app.js?v=42"></script>
+  <script src="app.js?v=43"></script>
 </body>
 </html>
