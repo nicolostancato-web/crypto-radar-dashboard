@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Radar — centro di comando</title>
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=45">
 </head>
 <body>
   <main class="wrap">
@@ -38,6 +38,17 @@
           <tbody></tbody>
         </table></div>
       </details>
+    </section>
+
+    <!-- STUDIO USCITE (backtest storico: l'uscita balene cattura i mostri) -->
+    <section id="exitstudy-sec">
+      <div class="seclabel">🔬 Studio uscite — l'uscita balene cattura i mostri</div>
+      <p class="note" id="exitstudy-note"></p>
+      <div class="tablewrap"><table id="exitstudy-table">
+        <thead><tr><th>uscita</th><th>tipo</th><th>conto (da €100)</th><th>win</th><th>miglior colpo</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <p class="note" id="exitstudy-verdict" style="font-style:italic"></p>
     </section>
 
     <!-- BALENE IN DIRETTA (real-time dal webhook) -->
@@ -170,6 +181,6 @@
     </footer>
 
   </main>
-  <script src="app.js?v=44"></script>
+  <script src="app.js?v=45"></script>
 </body>
 </html>

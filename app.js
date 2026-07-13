@@ -336,10 +336,27 @@ async function renderWhaleLive() {
   }
 }
 
+function renderExitStudy(s) {
+  if (!s || !s.strategies) { const el = document.getElementById("exitstudy-sec"); if (el) el.style.display = "none"; return; }
+  $("exitstudy-note").innerHTML = "⚠️ " + s.note;
+  const best = Math.max(...s.strategies.map(x => x.final));
+  const tb = document.querySelector("#exitstudy-table tbody");
+  tb.innerHTML = s.strategies.map(x => {
+    const win = x.final >= 100, top = x.best ? `${x.best[0]} +${x.best[1]}%` : "—";
+    const star = x.final === best ? " 🔥" : "";
+    const kindLbl = x.kind === "balene" ? "🐋 balene" : "prezzo";
+    return `<tr><td>${x.name}</td><td>${kindLbl}</td>
+      <td><b class="${win ? 'pos' : 'neg'}">€${x.final}</b>${star}</td>
+      <td>${x.win}%</td><td class="muted">${top}</td></tr>`;
+  }).join("");
+  $("exitstudy-verdict").textContent = "✅ " + s.verdict;
+}
+
 (async function () {
   const d = await load("pipeline.json");
   if (!d) { $("mission").textContent = "In avvio…"; return; }
   renderProject(d);
+  renderExitStudy(await load("exit_study.json"));
   renderWhaleLive();
   setInterval(renderWhaleLive, 30000);   // aggiorna ogni 30s
   renderTeam(await load("team.json"));
