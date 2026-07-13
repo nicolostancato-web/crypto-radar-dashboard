@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Radar — centro di comando</title>
-  <link rel="stylesheet" href="styles.css?v=45">
+  <link rel="stylesheet" href="styles.css?v=46">
 </head>
 <body>
   <main class="wrap">
@@ -40,16 +40,6 @@
       </details>
     </section>
 
-    <!-- STUDIO USCITE (backtest storico: l'uscita balene cattura i mostri) -->
-    <section id="exitstudy-sec">
-      <div class="seclabel">🔬 Studio uscite — l'uscita balene cattura i mostri</div>
-      <p class="note" id="exitstudy-note"></p>
-      <div class="tablewrap"><table id="exitstudy-table">
-        <thead><tr><th>uscita</th><th>tipo</th><th>conto (da €100)</th><th>win</th><th>miglior colpo</th></tr></thead>
-        <tbody></tbody>
-      </table></div>
-      <p class="note" id="exitstudy-verdict" style="font-style:italic"></p>
-    </section>
 
     <!-- BALENE IN DIRETTA (real-time dal webhook) -->
     <section id="whalelive-sec">
@@ -60,6 +50,20 @@
         <thead><tr><th>quando</th><th>balena</th><th>ha comprato</th><th>guarda</th></tr></thead>
         <tbody></tbody>
       </table></div>
+    </section>
+
+    <!-- APPROFONDIMENTI (collassati per chiarezza) -->
+    <details class="more"><summary>🔎 Approfondimenti — studio uscite, squadra, meeting, storia</summary>
+
+    <!-- STUDIO USCITE (backtest storico: l'uscita balene cattura i mostri) -->
+    <section id="exitstudy-sec">
+      <div class="seclabel">🔬 Studio uscite — l'uscita balene cattura i mostri</div>
+      <p class="note" id="exitstudy-note"></p>
+      <div class="tablewrap"><table id="exitstudy-table">
+        <thead><tr><th>uscita</th><th>tipo</th><th>conto (da €100)</th><th>win</th><th>miglior colpo</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <p class="note" id="exitstudy-verdict" style="font-style:italic"></p>
     </section>
 
     <!-- LA SQUADRA — 3 agenti che imparano ogni giorno -->
@@ -174,6 +178,8 @@
       </section>
     </details>
 
+    </details>
+
     <footer>
       <p>Paper trading — nessun soldo reale è in gioco. Il filtro on-chain serve a tenerci <b>fuori</b> dalle
       trappole. Onestà brutale sui dati: se un metodo non rende, lo diciamo. Costo del sistema: sotto $1/giorno.</p>
@@ -181,6 +187,6 @@
     </footer>
 
   </main>
-  <script src="app.js?v=45"></script>
+  <script src="app.js?v=46"></script>
 </body>
 </html>
