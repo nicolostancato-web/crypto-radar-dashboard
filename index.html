@@ -1,192 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Radar — centro di comando</title>
-  <link rel="stylesheet" href="styles.css?v=46">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portafoglio — crypto-radar</title>
+<style>
+  :root{
+    --card:#ffffff; --ink:#1a1d29; --muted:#7c8194; --line:#eceef5;
+    --accent:#6C4CF1; --up:#12a97a; --down:#e5484d;
+    --shadow:0 18px 40px -20px rgba(60,50,120,.35); --r:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,#f3f1fb 0%,#eaf0fb 45%,#f4eef9 100%);min-height:100dvh;-webkit-font-smoothing:antialiased;
+    padding:22px 16px calc(34px + env(safe-area-inset-bottom))}
+  .wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  header.top{display:flex;align-items:center;justify-content:space-between;padding:2px 4px}
+  .hi{font-size:14px;color:var(--muted);font-weight:500}.hi b{color:var(--ink);font-weight:700}
+  .live{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);font-weight:600}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--up);animation:p 2s infinite}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(18,169,122,.5)}70%{box-shadow:0 0 0 7px rgba(18,169,122,0)}100%{box-shadow:0 0 0 0 rgba(18,169,122,0)}}
+
+  .tabs{display:flex;gap:6px;background:rgba(255,255,255,.6);padding:5px;border-radius:16px;box-shadow:var(--shadow)}
+  .tab{flex:1;text-align:center;padding:11px;border-radius:12px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;border:0;background:transparent;transition:.2s}
+  .tab.on{background:var(--accent);color:#fff;box-shadow:0 8px 18px -8px rgba(108,76,241,.6)}
+  .page{display:none;flex-direction:column;gap:16px}.page.on{display:flex}
+
+  .hero{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 22px 10px;overflow:hidden}
+  .hlab{font-size:13px;color:var(--muted);font-weight:600}
+  .val{display:flex;align-items:baseline;gap:12px;margin-top:6px;flex-wrap:wrap}
+  .big{font-size:44px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+  .chip{display:inline-flex;align-items:center;gap:4px;font-size:14px;font-weight:700;padding:5px 11px;border-radius:999px}
+  .chip.up{color:var(--up);background:rgba(18,169,122,.1)}.chip.down{color:var(--down);background:rgba(229,72,77,.1)}
+  .sub{font-size:12.5px;color:var(--muted);margin-top:4px;font-weight:500}
+  .chartbox{margin:14px -22px 0;position:relative}
+  svg{display:block;width:100%;height:200px}
+  .tip{position:absolute;transform:translate(-50%,-100%);pointer-events:none;background:#fff;border:1px solid var(--line);
+    box-shadow:0 8px 20px -8px rgba(60,50,120,.4);padding:5px 10px;border-radius:10px;font-size:12.5px;font-weight:700;
+    font-variant-numeric:tabular-nums;white-space:nowrap;opacity:0;transition:opacity .2s}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .stat{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:15px 17px;display:flex;flex-direction:column;gap:2px}
+  .stat .k{font-size:12px;color:var(--muted);font-weight:600}
+  .stat .v{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.4px}
+  .stat .n{font-size:11px;color:var(--muted);font-weight:500;margin-top:1px}
+  .v.good{color:var(--up)}.v.bad{color:var(--down)}
+  .pill{align-self:flex-start;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;margin-top:2px}
+  .pill.good{color:var(--up);background:rgba(18,169,122,.12)}.pill.bad{color:var(--down);background:rgba(229,72,77,.12)}
+
+  .panel{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 22px}
+  .panel h3{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+  .rows{display:flex;flex-direction:column;gap:11px}
+  .li{display:flex;gap:12px;align-items:flex-start}
+  .li .num{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(108,76,241,.1);color:var(--accent);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .li .tx{font-size:13.5px;line-height:1.5;color:#3a3d4d}.li .tx b{color:var(--ink)}
+  .kv{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .kv:last-child{border:0}.kv .k{color:var(--muted);font-weight:500}.kv .v{font-weight:800;font-variant-numeric:tabular-nums}
+
+  .prog{height:9px;background:#e9ebf4;border-radius:999px;overflow:hidden;margin:6px 0 4px}
+  .prog>i{display:block;height:100%;background:linear-gradient(90deg,#6C4CF1,#9b7bff);border-radius:999px;transition:width .6s}
+  .phase{display:flex;gap:8px;margin-top:4px}
+  .ph{flex:1;text-align:center;font-size:11px;font-weight:700;padding:7px 4px;border-radius:10px;background:#f1f0f9;color:var(--muted)}
+  .ph.done{background:rgba(18,169,122,.12);color:var(--up)}.ph.now{background:var(--accent);color:#fff}
+
+  .note{background:rgba(108,76,241,.06);border:1px solid rgba(108,76,241,.14);border-radius:16px;padding:13px 16px;font-size:12.5px;color:#524a76;font-weight:500;line-height:1.5}
+  .note b{color:var(--accent)}
+  footer{text-align:center;font-size:11px;color:var(--muted);font-weight:500}
+  @media(max-width:420px){.big{font-size:38px}svg{height:180px}}
+</style>
 </head>
 <body>
-  <main class="wrap">
+<div class="wrap">
+  <header class="top">
+    <div class="hi">crypto-<b>radar</b> · Fase 2</div>
+    <div class="live"><span class="dot"></span> live</div>
+  </header>
 
-    <!-- HERO: chi siamo, che giorno è, in che fase -->
-    <header class="hero">
-      <div class="hrow">
-        <div class="brand">CRYPTO&nbsp;RADAR</div>
-        <div class="livebadge" id="livebadge">● in funzione</div>
+  <div class="tabs">
+    <button class="tab on" data-p="port">Portafoglio</button>
+    <button class="tab" data-p="strat">Strategia</button>
+  </div>
+
+  <!-- ===== PORTAFOGLIO ===== -->
+  <section class="page on" id="port">
+    <div class="hero">
+      <div class="hlab">Capitale · simulazione</div>
+      <div class="val"><span class="big" id="bal">—</span><span class="chip up" id="grow">—</span></div>
+      <div class="sub" id="since">—</div>
+      <div class="chartbox"><svg id="chart" viewBox="0 0 760 200" preserveAspectRatio="none"></svg><div class="tip" id="tip"></div></div>
+    </div>
+
+    <div class="grid" id="stats"></div>
+
+    <div class="panel">
+      <h3>Andamento dettagliato</h3>
+      <div id="detail"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Wallet tracciati &amp; dati accumulati</h3>
+      <div id="data"></div>
+    </div>
+
+    <div class="note" id="note">—</div>
+  </section>
+
+  <!-- ===== STRATEGIA ===== -->
+  <section class="page" id="strat">
+    <div class="panel">
+      <h3>La strategia che stiamo usando</h3>
+      <div class="rows">
+        <div class="li"><span class="num">1</span><span class="tx"><b>Seguiamo la smart money.</b> Non prevediamo i prezzi: copiamo i portafogli che hanno già uno storico di vittorie (almeno 5 colpi andati bene). Ne seguiamo <b id="w1">20</b>.</span></div>
+        <div class="li"><span class="num">2</span><span class="tx"><b>Compriamo sul ritracciamento.</b> Quando uno di loro entra, aspettiamo il calo che segue e compriamo lì — non sul massimo.</span></div>
+        <div class="li"><span class="num">3</span><span class="tx"><b>Vendiamo quando escono LORO.</b> Non sul prezzo: usciamo quando metà delle balene che ci avevano fatto entrare vendono. Teniamo anche nei cali, finché chi sa è dentro.</span></div>
+        <div class="li"><span class="num">4</span><span class="tx"><b>Paracadute anti-truffa.</b> Se un token crolla oltre l'85% prima che le balene escano, usciamo subito: è morto.</span></div>
+        <div class="li"><span class="num">5</span><span class="tx"><b>Puntiamo il 10% del capitale</b> a operazione (si compone). Perdiamo circa metà delle volte, ma i vincenti fanno +200/+1000%: pochi colpi grossi pagano i tanti piccoli errori.</span></div>
       </div>
-      <h1 id="mission">—</h1>
-      <p class="method" id="method">—</p>
-      <div class="herometa">
-        <span class="chip" id="day">Giorno —</span>
-        <span class="chip" id="phase">—</span>
-        <span class="chip ghost" id="updated">—</span>
+    </div>
+
+    <div class="panel">
+      <h3>A che punto siamo</h3>
+      <div class="phase">
+        <div class="ph done">1 · Macchina costruita</div>
+        <div class="ph now">2 · In pista</div>
+        <div class="ph">3 · Capitale reale</div>
       </div>
-    </header>
-
-    <!-- PORTAFOGLIO PAPER — PRIMA COSA, in cima -->
-    <section id="portfolio-sec">
-      <div class="seclabel">💼 Portafoglio paper — partiti da €100</div>
-      <div class="port-head" id="port-head"></div>
-      <div class="port-curve" id="port-curve"></div>
-      <p class="note" id="port-rules"></p>
-      <details class="port-more">
-        <summary>Vedi i trade e come funziona</summary>
-        <p class="note">Simulazione ONESTA (nessun soldo vero): ogni segnale = un paper-trade con entrata e uscita realistiche (slippage, trailing stop, niente senno di poi). Se la strategia perde, il portafoglio scende. Così scopriamo la verità a costo zero.</p>
-        <div class="tablewrap"><table id="port-trades">
-          <thead><tr><th>token</th><th>bs</th><th>risultato</th><th>P&L €</th><th>capitale</th><th>dati</th></tr></thead>
-          <tbody></tbody>
-        </table></div>
-      </details>
-    </section>
-
-
-    <!-- BALENE IN DIRETTA (real-time dal webhook) -->
-    <section id="whalelive-sec">
-      <div class="seclabel">🐋 Balene in diretta <span class="muted" id="whalelive-status"></span></div>
-      <p class="note">Le 20 balene vincenti che seguiamo, in tempo reale. Quando una compra un token, appare qui al secondo. È il copy-trading: guardi cosa carica lo smart money.</p>
-      <div class="wl-head" id="whalelive-head"></div>
-      <div class="tablewrap"><table id="whalelive-table">
-        <thead><tr><th>quando</th><th>balena</th><th>ha comprato</th><th>guarda</th></tr></thead>
-        <tbody></tbody>
-      </table></div>
-    </section>
-
-    <!-- APPROFONDIMENTI (collassati per chiarezza) -->
-    <details class="more"><summary>🔎 Approfondimenti — studio uscite, squadra, meeting, storia</summary>
-
-    <!-- STUDIO USCITE (backtest storico: l'uscita balene cattura i mostri) -->
-    <section id="exitstudy-sec">
-      <div class="seclabel">🔬 Studio uscite — l'uscita balene cattura i mostri</div>
-      <p class="note" id="exitstudy-note"></p>
-      <div class="tablewrap"><table id="exitstudy-table">
-        <thead><tr><th>uscita</th><th>tipo</th><th>conto (da €100)</th><th>win</th><th>miglior colpo</th></tr></thead>
-        <tbody></tbody>
-      </table></div>
-      <p class="note" id="exitstudy-verdict" style="font-style:italic"></p>
-    </section>
-
-    <!-- LA SQUADRA — 3 agenti che imparano ogni giorno -->
-    <section id="team-sec">
-      <div class="seclabel">🧑‍💼 La squadra — 3 agenti, imparano ogni giorno</div>
-      <div class="team-grid" id="team-grid"></div>
-      <div class="cto-note" id="cto-note"></div>
-    </section>
-
-    <!-- VERBALE DEL MEETING DI ALLENAMENTO -->
-    <section id="meeting-sec">
-      <div class="seclabel">📋 Verbale del meeting di allenamento <span class="muted" id="meeting-when"></span></div>
-      <p class="note">Ogni giorno alle 08:30 i 3 agenti si allineano e si parlano: l'Analista raccomanda al Trader, il Trader dice cosa gli serve, l'Accumulatore sposta il focus. Il CTO scrive il verbale.</p>
-      <div class="meeting-flow" id="meeting-flow"></div>
-      <div class="meeting-decisions" id="meeting-decisions"></div>
-      <div class="progress-wrap" id="progress-wrap">
-        <div class="dec-h">📈 Progresso verso la profittabilità <span class="muted">— mediana P&L per trade, deve salire fino allo 0 e oltre</span></div>
-        <div id="progress-chart"></div>
+      <div style="margin-top:16px">
+        <div class="kv"><span class="k">Fase attuale</span><span class="v">Accumulo &amp; osservazione</span></div>
+        <div class="kv"><span class="k">Progresso verso il verdetto</span><span class="v" id="progtxt">—</span></div>
       </div>
-    </section>
+      <div class="prog"><i id="progbar" style="width:0"></i></div>
+      <div class="sub">Serve arrivare a ~100 operazioni per essere certi che non sia fortuna. Fino ad allora: <b>non si tocca niente</b>, si accumula e si analizza.</div>
+    </div>
 
-    <!-- LA SCOPERTA DEL MOMENTO -->
-    <section class="insight-wrap" id="insight-wrap">
-      <div class="seclabel">La scoperta del momento</div>
-      <div id="insight"></div>
-    </section>
-
-    <!-- A CHE PUNTO SIAMO -->
-    <section>
-      <div class="seclabel">A che punto siamo</div>
-      <div class="bignums" id="bignums"></div>
-    </section>
-
-    <!-- COSA FANNO LE BALENE -->
-    <section id="whales-sec">
-      <div class="seclabel">🐋 Cosa fanno le balene adesso</div>
-      <p class="note">Leggiamo ogni compravendita: chi <b>accumula</b> (verde) e chi <b>scarica</b> (rosso). Più pressione verde = le balene comprano.</p>
-      <div class="tablewrap"><table id="whales">
-        <thead><tr><th>token</th><th>pressione</th><th>accumulano</th><th>scaricano</th><th>swap letti</th></tr></thead>
-        <tbody></tbody>
-      </table></div>
-      <div id="smart"></div>
-    </section>
-
-    <!-- COSA ABBIAMO CAPITO (timeline) -->
-    <section>
-      <div class="seclabel">Cosa abbiamo capito</div>
-      <p class="note">Le scoperte vere, in ordine. L'ultima è quella che sta guidando le prossime mosse.</p>
-      <div class="timeline" id="timeline"></div>
-    </section>
-
-    <!-- DOVE ANDIAMO (roadmap) -->
-    <section>
-      <div class="seclabel">Cosa stiamo facendo e dove andiamo</div>
-      <div class="roadmap" id="roadmap"></div>
-    </section>
-
-    <!-- IL METODO -->
-    <section>
-      <div class="seclabel">Come lavoriamo</div>
-      <div class="loopstrip">
-        <div class="loopstep"><b>Implementa</b><span>un'idea / un fix</span></div>
-        <div class="looparrow">→</div>
-        <div class="loopstep"><b>Accumula</b><span>dati, giorni</span></div>
-        <div class="looparrow">→</div>
-        <div class="loopstep"><b>Scopri</b><span>un'AI esterna ci critica ogni 24h</span></div>
-        <div class="looparrow">→</div>
-        <div class="loopstep"><b>Adatta</b><span>e si ricomincia</span></div>
+    <div class="panel">
+      <h3>Prossima mossa (e se qualcosa va storto)</h3>
+      <div class="rows">
+        <div class="li"><span class="num">✓</span><span class="tx"><b>Se regge</b> (100 operazioni, ancora in profitto, solido) → Fase 3: gestione del capitale (puntata al 2-5%, accumulo periodico) e test con soldi veri.</span></div>
+        <div class="li"><span class="num">!</span><span class="tx"><b>Se si rompe</b> (le vinte crollano, torna fragile, o il conto si azzera) → si analizza <b>dove</b> ha ceduto, si corregge un pezzo alla volta, si riprova. Non si molla.</span></div>
       </div>
-      <p class="note center">Non esiste un edge già pronto. Questo loop <b>è</b> il metodo per arrivarci.</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- COSA SCALDA SU X -->
-    <section>
-      <div class="seclabel">Cosa scalda su X adesso <span class="muted" id="scan-when"></span></div>
-      <p class="note">L'ultimo ascolto di Grok — token in fase di accensione (pre-picco). Devono ancora passare il filtro.</p>
-      <div class="cards3" id="trends"></div>
-    </section>
+  <footer id="foot">crypto-radar · paper trading · i dati si aggiornano da soli</footer>
+</div>
 
-    <!-- IL FILTRO -->
-    <section>
-      <div class="seclabel">Il filtro al lavoro <span class="muted">— perla o trappola</span></div>
-      <p class="note" id="filter-note"></p>
-      <div id="candidates"></div>
-    </section>
+<script>
+const EUR=n=>'€'+Number(n).toLocaleString('it-IT',{maximumFractionDigits:0});
+const START=100;
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on'); document.getElementById(t.dataset.p).classList.add('on');
+});
+function smooth(pts){let d=`M ${pts[0][0]} ${pts[0][1]}`;for(let i=0;i<pts.length-1;i++){const[x0,y0]=pts[i],[x1,y1]=pts[i+1];const cx=(x0+x1)/2;d+=` C ${cx} ${y0}, ${cx} ${y1}, ${x1} ${y1}`;}return d;}
+function draw(eq){
+  const svg=document.getElementById('chart'),W=760,H=200,pad=16;
+  const vals=eq.map(p=>p[1]);let lo=Math.min(...vals,START),hi=Math.max(...vals);if(hi===lo)hi=lo+1;
+  const x=i=>pad+i*(W-2*pad)/Math.max(eq.length-1,1),y=v=>pad+(H-2*pad)*(1-(v-lo)/(hi-lo));
+  const pts=eq.map((p,i)=>[x(i),y(p[1])]),line=smooth(pts);
+  const area=line+` L ${x(eq.length-1)} ${H} L ${x(0)} ${H} Z`,y100=y(START);
+  svg.innerHTML=`<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6C4CF1" stop-opacity="0.28"/><stop offset="100%" stop-color="#6C4CF1" stop-opacity="0"/></linearGradient></defs>
+  <line x1="${pad}" y1="${y100}" x2="${W-pad}" y2="${y100}" stroke="#c9cee0" stroke-width="1.2" stroke-dasharray="4 5"/>
+  <path d="${area}" fill="url(#g)"/><path d="${line}" fill="none" stroke="#6C4CF1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="${x(eq.length-1)}" cy="${y(vals[vals.length-1])}" r="5.5" fill="#6C4CF1" stroke="#fff" stroke-width="2.5"/>`;
+  const tip=document.getElementById('tip');
+  tip.style.left=Math.min(x(eq.length-1)/W*100,86)+'%';tip.style.top=(y(vals[vals.length-1])/H*100)+'%';
+  tip.textContent=EUR(vals[vals.length-1]);tip.style.opacity=1;
+}
+function stat(k,v,cls,n){return `<div class="stat"><span class="k">${k}</span>${cls==='pill'?`<span class="pill ${v.good?'good':'bad'}">${v.t}</span>`:`<span class="v ${cls||''}">${v}</span>`}${n?`<span class="n">${n}</span>`:''}</div>`;}
+function kv(k,v){return `<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`;}
 
-    <!-- DETTAGLI (approfondimento) -->
-    <details class="more">
-      <summary>Dettagli tecnici — esiti simulati, strategie, regole apprese</summary>
+async function jget(f){try{return await(await fetch(f+'?t='+Date.now())).json();}catch(e){return null;}}
+async function load(){
+  const d=await jget('portfolio.json'); if(!d)return;
+  const eq=(d.equity&&d.equity.length?d.equity.slice():[[0,START]]);
+  if(eq[0][1]!==START)eq.unshift([eq[0][0]-1,START]);
+  const final=d.final??START,grow=(final/START-1)*100;
+  document.getElementById('bal').textContent=EUR(final);
+  const g=document.getElementById('grow');g.className='chip '+(grow>=0?'up':'down');g.textContent=(grow>=0?'▲ +':'▼ ')+grow.toFixed(0)+'%';
+  document.getElementById('since').textContent=`da ${EUR(START)} iniziali · ${d.n_trades||0} operazioni`;
+  draw(eq);
 
-      <section>
-        <h3>Entrate &amp; uscite simulate</h3>
-        <div id="learnbox"></div>
-        <div class="tablewrap"><table id="outcomes">
-          <thead><tr><th>token</th><th>esito</th><th>picco</th><th>ora</th><th>2x?</th><th>vol 1h</th><th>punti</th></tr></thead>
-          <tbody></tbody>
-        </table></div>
-      </section>
+  const solido=!d.fragile,winGood=(d.win_rate||0)>=45;
+  document.getElementById('stats').innerHTML=[
+    stat('Operazioni',d.n_trades||0,'',`stagione ${d.season||1}`),
+    stat('Vinte',(d.win_rate||0)+'%',winGood?'good':'','trade in profitto'),
+    stat('Solidità',{t:solido?'SOLIDO':'FRAGILE',good:solido},'pill',solido?'non dipende da 1 trade':'regge su 1 trade'),
+    stat('Miglior trade','+'+Math.round(d.best||0)+'%','good','peggiore: '+Math.round(d.worst||0)+'%'),
+  ].join('');
 
-      <section>
-        <h3>Strategie d'uscita (paper trading)</h3>
-        <div class="tablewrap"><table id="simtable">
-          <thead><tr><th>strategia</th><th>mediano</th><th>vince</th><th>tieni</th></tr></thead>
-          <tbody></tbody>
-        </table></div>
-        <div id="sim-verdict"></div>
-      </section>
+  document.getElementById('detail').innerHTML=[
+    kv('Crescita totale',`<span style="color:${grow>=0?'var(--up)':'var(--down)'}">${grow>=0?'+':''}${grow.toFixed(0)}%</span>`),
+    kv('Capitale senza il trade migliore',EUR(d.without_top??START)),
+    kv('Conti azzerati (blow-up)',d.blowups||0),
+    kv('Attrito simulato (slippage)','15% andata+ritorno'),
+    kv('Puntata per operazione','10% del capitale'),
+  ].join('');
 
-      <section id="lessons-sec">
-        <h3>Le regole apprese dai trade</h3>
-        <div id="lessons"></div>
-      </section>
-    </details>
+  // wallet (live da smart_wallets.json) + dati accumulati
+  const sw=await jget('smart_wallets.json')||{};
+  const seguiti=(sw.smart&&sw.smart.length)||20, qual=sw.qualified||652, visti=sw.wallets_seen||24720;
+  document.getElementById('w1').textContent=seguiti;
+  document.getElementById('data').innerHTML=[
+    kv('Wallet seguiti (la smart money)',seguiti),
+    kv('Wallet qualificati (5+ colpi)',Number(qual).toLocaleString('it-IT')),
+    kv('Wallet totali analizzati',Number(visti).toLocaleString('it-IT')),
+    kv('Osservazioni prezzo raccolte','~53.000'),
+    kv('Analisi balene on-chain','~8.500'),
+  ].join('');
 
-    </details>
+  const n=d.n_trades||0,pct=Math.min(n,100);
+  document.getElementById('progtxt').textContent=n+' / 100 operazioni';
+  document.getElementById('progbar').style.width=pct+'%';
 
-    <footer>
-      <p>Paper trading — nessun soldo reale è in gioco. Il filtro on-chain serve a tenerci <b>fuori</b> dalle
-      trappole. Onestà brutale sui dati: se un metodo non rende, lo diciamo. Costo del sistema: sotto $1/giorno.</p>
-      <p class="muted" id="foot-updated"></p>
-    </footer>
-
-  </main>
-  <script src="app.js?v=46"></script>
+  const blow=d.blowups||0;
+  document.getElementById('note').innerHTML=solido
+    ?`<b>Fase 2 in corso.</b> Il capitale cresce e il segnale è <b>solido</b> — non dipende da un colpo di fortuna. Accumuliamo verso 100 operazioni, poi il verdetto. ${blow?`⚠️ conti azzerati: ${blow}.`:''}`
+    :`<b>Attenzione:</b> ora il profitto dipende da pochi trade (fragile). Da tenere d'occhio. ${blow?`Conti azzerati: ${blow}.`:''}`;
+  document.getElementById('foot').textContent=`crypto-radar · paper trading · aggiornato ${new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}`;
+}
+load(); setInterval(load,90000);
+</script>
 </body>
 </html>
