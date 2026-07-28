@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-07-28 18:24",
-  "wallets_seen": 24978,
-  "qualified": 659,
+  "updated_utc": "2026-07-28 22:02",
+  "wallets_seen": 25052,
+  "qualified": 661,
   "min_plays": 5,
   "smart": [
     {
@@ -107,7 +107,7 @@
       ]
     },
     {
-      "wallet": "ricEmGn6WZ9kN2ASm1MAt7LoE1hBgu1VcQrjRwkAPfc",
+      "wallet": "AXA2k9FKgTyUaaQSAvB7qVHUsnRJJST2rsmF6EFDZBHZ",
       "plays": 5,
       "hits": 4,
       "winrate": 0.8,
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "wallet": "AXA2k9FKgTyUaaQSAvB7qVHUsnRJJST2rsmF6EFDZBHZ",
+      "wallet": "ricEmGn6WZ9kN2ASm1MAt7LoE1hBgu1VcQrjRwkAPfc",
       "plays": 5,
       "hits": 4,
       "winrate": 0.8,
@@ -190,6 +190,17 @@
         "Strong CTO lea",
         "The Vibes Are ",
         "exponential co"
+      ]
+    },
+    {
+      "wallet": "2vw9PPy26GR8Z5dB7CQN3KwqHRgfvfR2Ph8UBvZiQeBu",
+      "plays": 6,
+      "hits": 4,
+      "winrate": 0.67,
+      "score": 0.505,
+      "tickers": [
+        "Open a $BULLSI",
+        "made off my ow"
       ]
     },
     {
@@ -265,21 +276,6 @@
         "6hKk...pump",
         "DESTINY",
         "Raccoon On Pad"
-      ]
-    },
-    {
-      "wallet": "hnu5iBK8UoHb51UFsH1RYTUAYdrhjHvV5YMTf9T1CYN",
-      "plays": 17,
-      "hits": 9,
-      "winrate": 0.53,
-      "score": 0.48,
-      "tickers": [
-        "$MemesAI",
-        "Bears have bee",
-        "Datacenter",
-        "EP3gwd...",
-        "Earn, trade an",
-        "FEBU"
       ]
     }
   ]
