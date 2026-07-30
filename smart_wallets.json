@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-07-29 21:46",
-  "wallets_seen": 25440,
-  "qualified": 669,
+  "updated_utc": "2026-07-30 04:06",
+  "wallets_seen": 25513,
+  "qualified": 675,
   "min_plays": 5,
   "smart": [
     {
@@ -17,21 +17,6 @@
         "On-chain infin",
         "PUMPCAT",
         "PumpfunLife"
-      ]
-    },
-    {
-      "wallet": "3K7XMbqvFTKT211Dqu8tXC1iK5vmQQ2MZp5mxSdEzWvx",
-      "plays": 14,
-      "hits": 10,
-      "winrate": 0.71,
-      "score": 0.608,
-      "tickers": [
-        "$Datacenter",
-        "BABYJIMOTHY",
-        "DESTINY",
-        "Datacenter",
-        "Justice for Ab",
-        "NEEGY"
       ]
     },
     {
@@ -89,6 +74,21 @@
         "Serious questi",
         "The Smol Mole ",
         "牛魔王，中国人家喻户晓的著名"
+      ]
+    },
+    {
+      "wallet": "3K7XMbqvFTKT211Dqu8tXC1iK5vmQQ2MZp5mxSdEzWvx",
+      "plays": 15,
+      "hits": 10,
+      "winrate": 0.67,
+      "score": 0.578,
+      "tickers": [
+        "$Datacenter",
+        "BABYJIMOTHY",
+        "DESTINY",
+        "Datacenter",
+        "Justice for Ab",
+        "NEEGY"
       ]
     },
     {
@@ -178,6 +178,19 @@
       ]
     },
     {
+      "wallet": "43QmFc2QPPGyMrSNuPnhvfs8BFW1XVZYFdbwURtWoo9x",
+      "plays": 6,
+      "hits": 4,
+      "winrate": 0.67,
+      "score": 0.505,
+      "tickers": [
+        "AN1Jkje",
+        "GBULL",
+        "The OG mascot ",
+        "one of the fun"
+      ]
+    },
+    {
       "wallet": "2nGi5a8WA3A9dsZG88cxYnmQpmnEvf5wppFMNsCWQcaA",
       "plays": 6,
       "hits": 4,
@@ -201,21 +214,6 @@
       "tickers": [
         "Open a $BULLSI",
         "made off my ow"
-      ]
-    },
-    {
-      "wallet": "3ZfvcUSNZtQppbZ9yvzB377JsgvW5FMYhb3uApnKXjqY",
-      "plays": 8,
-      "hits": 5,
-      "winrate": 0.62,
-      "score": 0.504,
-      "tickers": [
-        "A mirror dashb",
-        "BULLBIT",
-        "Cardtopia is a",
-        "RAN",
-        "SPGR",
-        "The eye saw it"
       ]
     },
     {
