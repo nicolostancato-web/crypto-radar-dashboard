@@ -77,13 +77,12 @@
   </header>
 
   <div class="tabs">
-    <button class="tab on" data-p="port">Portafoglio</button>
-    <button class="tab" data-p="live">🔴 Live</button>
+    <button class="tab on" data-p="live">🔴 Live</button>
     <button class="tab" data-p="strat">Strategia</button>
   </div>
 
   <!-- ===== LIVE (wallet reale) ===== -->
-  <section class="page" id="live">
+  <section class="page on" id="live">
     <div class="hero">
       <div class="hlab">Wallet reale · bot autonomo <span id="livedot" style="font-weight:700"></span></div>
       <div class="val"><span class="big" id="lval">—</span><span class="chip up" id="lpnl">—</span></div>
@@ -92,30 +91,6 @@
     <div class="panel"><h3>Posizioni aperte</h3><div id="lpos"></div></div>
     <div class="panel"><h3>Ultimi trade reali</h3><div id="ltrades"></div></div>
     <div class="note" id="lnote">—</div>
-  </section>
-
-  <!-- ===== PORTAFOGLIO ===== -->
-  <section class="page on" id="port">
-    <div class="hero">
-      <div class="hlab">Capitale · simulazione</div>
-      <div class="val"><span class="big" id="bal">—</span><span class="chip up" id="grow">—</span></div>
-      <div class="sub" id="since">—</div>
-      <div class="chartbox"><svg id="chart" viewBox="0 0 760 200" preserveAspectRatio="none"></svg><div class="tip" id="tip"></div></div>
-    </div>
-
-    <div class="grid" id="stats"></div>
-
-    <div class="panel">
-      <h3>Andamento dettagliato</h3>
-      <div id="detail"></div>
-    </div>
-
-    <div class="panel">
-      <h3>Wallet tracciati &amp; dati accumulati</h3>
-      <div id="data"></div>
-    </div>
-
-    <div class="note" id="note">—</div>
   </section>
 
   <!-- ===== STRATEGIA ===== -->
@@ -135,27 +110,26 @@
       <h3>A che punto siamo</h3>
       <div class="phase">
         <div class="ph done">1 · Macchina costruita</div>
-        <div class="ph now">2 · In pista</div>
-        <div class="ph">3 · Capitale reale</div>
+        <div class="ph done">2 · Validata</div>
+        <div class="ph now">3 · LIVE 🔴</div>
       </div>
       <div style="margin-top:16px">
-        <div class="kv"><span class="k">Fase attuale</span><span class="v">Accumulo &amp; osservazione</span></div>
-        <div class="kv"><span class="k">Progresso verso il verdetto</span><span class="v" id="progtxt">—</span></div>
+        <div class="kv"><span class="k">Fase attuale</span><span class="v">Live a $1 (test esecuzione)</span></div>
+        <div class="kv"><span class="k">Prossimo passo</span><span class="v">→ $50 se l'esecuzione regge</span></div>
       </div>
-      <div class="prog"><i id="progbar" style="width:0"></i></div>
-      <div class="sub">Serve arrivare a ~100 operazioni per essere certi che non sia fortuna. Fino ad allora: <b>non si tocca niente</b>, si accumula e si analizza.</div>
+      <div class="sub">Il bot trada coi soldi veri, <b>$1 per posizione</b> (rischio max $1). Osserviamo che l'esecuzione sia pulita su qualche trade → poi si sale a $50.</div>
     </div>
 
     <div class="panel">
       <h3>Prossima mossa (e se qualcosa va storto)</h3>
       <div class="rows">
-        <div class="li"><span class="num">✓</span><span class="tx"><b>Se regge</b> (100 operazioni, ancora in profitto, solido) → Fase 3: gestione del capitale (puntata al 2-5%, accumulo periodico) e test con soldi veri.</span></div>
-        <div class="li"><span class="num">!</span><span class="tx"><b>Se si rompe</b> (le vinte crollano, torna fragile, o il conto si azzera) → si analizza <b>dove</b> ha ceduto, si corregge un pezzo alla volta, si riprova. Non si molla.</span></div>
+        <div class="li"><span class="num">✓</span><span class="tx"><b>Se l'esecuzione è pulita</b> (buy/sell atterrano, uscite scattano, zero bug) → si sale a <b>$50</b> per posizione.</span></div>
+        <div class="li"><span class="num">!</span><span class="tx"><b>Se qualcosa si rompe</b> → il guardiano avvisa, il kill-switch ferma tutto. Si corregge e si riprova. Rischio sempre limitato al float.</span></div>
       </div>
     </div>
   </section>
 
-  <footer id="foot">crypto-radar · paper trading · i dati si aggiornano da soli</footer>
+  <footer id="foot">crypto-radar · 🔴 live a $1 · i dati si aggiornano da soli</footer>
 </div>
 
 <script>
@@ -251,7 +225,7 @@ async function loadLive(){
     ?`<b>Bot LIVE a \$1/posizione.</b> Rischio massimo per trade: \$1. Compra i segnali balene, esce quando escono loro o su rug-stop. Il guardiano veglia.`
     :`Bot in dry-run (spento). Nessun trade reale.`;
 }
-load(); loadLive(); setInterval(()=>{load();loadLive();},90000);
+loadLive(); setInterval(loadLive,90000);
 </script>
 </body>
 </html>
