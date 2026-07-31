@@ -78,8 +78,21 @@
 
   <div class="tabs">
     <button class="tab on" data-p="port">Portafoglio</button>
+    <button class="tab" data-p="live">🔴 Live</button>
     <button class="tab" data-p="strat">Strategia</button>
   </div>
+
+  <!-- ===== LIVE (wallet reale) ===== -->
+  <section class="page" id="live">
+    <div class="hero">
+      <div class="hlab">Wallet reale · bot autonomo <span id="livedot" style="font-weight:700"></span></div>
+      <div class="val"><span class="big" id="lval">—</span><span class="chip up" id="lpnl">—</span></div>
+      <div class="sub" id="lsub">—</div>
+    </div>
+    <div class="panel"><h3>Posizioni aperte</h3><div id="lpos"></div></div>
+    <div class="panel"><h3>Ultimi trade reali</h3><div id="ltrades"></div></div>
+    <div class="note" id="lnote">—</div>
+  </section>
 
   <!-- ===== PORTAFOGLIO ===== -->
   <section class="page on" id="port">
@@ -220,7 +233,25 @@ async function load(){
     :`<b>Attenzione:</b> ora il profitto dipende da pochi trade (fragile). Da tenere d'occhio. ${blow?`Conti azzerati: ${blow}.`:''}`;
   document.getElementById('foot').textContent=`crypto-radar · paper trading · aggiornato ${new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}`;
 }
-load(); setInterval(load,90000);
+async function loadLive(){
+  const d=await jget('live.json'); if(!d)return;
+  document.getElementById('livedot').textContent=d.live?'🔴 acceso':'⚪ spento';
+  document.getElementById('lval').textContent=EUR(d.value_usd);
+  const g=document.getElementById('lpnl'), pnl=d.pnl_pct||0; g.className='chip '+(pnl>=0?'up':'down');
+  g.textContent=(pnl>=0?'▲ +':'▼ ')+pnl.toFixed(0)+'%';
+  document.getElementById('lsub').textContent=`${d.sol} SOL · da ${EUR(d.start_usd)} iniziali · ${d.n_trades||0} trade reali`;
+  document.getElementById('lpos').innerHTML=(d.positions&&d.positions.length)
+    ? d.positions.map(p=>kv(p.ticker||p.mint.slice(0,6), EUR(p.value_usd))).join('')
+    : '<div class="sub">nessuna posizione aperta</div>';
+  document.getElementById('ltrades').innerHTML=(d.trades&&d.trades.length)
+    ? d.trades.slice(0,12).map(t=>{const ok=(t.res&&t.res.ok);const act=t.act==='buy'?'compra':'vende';
+        return `<div class="kv"><span class="k">${act} ${(t.ticker||t.ca||t.mint||'').toString().slice(0,10)}</span><span class="v" style="color:${ok?'var(--up)':'var(--down)'}">${ok?'✓':'✗'}</span></div>`;}).join('')
+    : '<div class="sub">nessun trade reale ancora</div>';
+  document.getElementById('lnote').innerHTML=d.live
+    ?`<b>Bot LIVE a \$1/posizione.</b> Rischio massimo per trade: \$1. Compra i segnali balene, esce quando escono loro o su rug-stop. Il guardiano veglia.`
+    :`Bot in dry-run (spento). Nessun trade reale.`;
+}
+load(); loadLive(); setInterval(()=>{load();loadLive();},90000);
 </script>
 </body>
 </html>
